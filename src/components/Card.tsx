@@ -1,12 +1,12 @@
 import React, { FC } from "react"
 
+import { CardBase } from "~/styles/card"
+
 const Card: FC = () => {
   return (
-    <div className="card">
-      <div>
+    <CardBase className="card">
         <p>これはカードだぞ</p>
-      </div>
-    </div>
+    </CardBase>
   )
 }
 
