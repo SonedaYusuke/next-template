@@ -1,17 +1,11 @@
 import React, { FC } from "react"
 import Head from "next/head"
-import styles from "../styles/Home.module.css"
 
-import styled from "@emotion/styled"
-
-const PinkText = styled.div`
-  color: hotpink;
-  font-size: 32px;
-`
+import { PinkText } from "~/styles/button.tsx"
 
 const About: FC = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
