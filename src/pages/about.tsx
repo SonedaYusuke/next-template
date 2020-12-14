@@ -1,16 +1,14 @@
 import React, { FC } from "react"
-import Head from "next/head"
+
+import Card from "~/components/Card"
 
 import { PinkText } from "~/styles/button.tsx"
 
 const About: FC = () => {
   return (
     <div>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <PinkText>about</PinkText>
+      <Card></Card>
     </div>
   )
 }
