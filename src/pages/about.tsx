@@ -4,11 +4,10 @@ import styles from "../styles/Home.module.css"
 
 import styled from "@emotion/styled"
 
-const PinkText = styled.div({
-  color: "hotpink",
-  fontSize: "32px",
-})
-
+const PinkText = styled.div`
+  color: hotpink;
+  font-size: 32px;
+`
 
 const About: FC = () => {
   return (
