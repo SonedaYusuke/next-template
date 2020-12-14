@@ -1,8 +1,8 @@
 import React, { FC } from "react"
-import Head from 'next/head'
+import Head from "next/head"
 import styles from "../styles/Home.module.css"
 
-const Index:FC = () => {
+const Index: FC = () => {
   return (
     <div className={styles.container}>
       <Head>
