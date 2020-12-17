@@ -1,9 +1,12 @@
-import React from "react"
+import React, { FC } from "react"
 
-const Index = () => {
+import Link from "next/link"
+
+const Index: FC = () => {
   return (
     <div>
       <p>トップページ</p>
+      <Link href="/about">about</Link>
     </div>
   )
 }
