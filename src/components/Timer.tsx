@@ -1,33 +1,15 @@
-import React, { FC, useState, useRef, useEffect } from 'react'
+import React, { FC } from 'react'
+import { useTimer } from "~/hooks/useTimer"
 
 const Timer: FC = () => {
-  const [time, setTime] = useState<number>(10)
-  const refTimer = useRef(time)
-
-  useEffect(() => {
-    refTimer.current = time
-  }, [time])
-
-  const [timerId, setTimerId] = useState<NodeJS.Timeout | number>(0)
-
-  const timer = () => {
-    setTime(refTimer.current - 1)
-  }
-
-  const onStart = () => {
-    setTimerId(setInterval(timer, 1000))
-  }
-
-  const onStop = () => {
-    clearInterval(timerId as number)
-  }
+  const timer = useTimer()
 
   return (
     <>
       <p>これはタイマーだぞ</p>
-      <p>{time}</p>
-      <button onClick={() => onStart()}>start</button>
-      <button onClick={() => onStop()}>stop</button>
+      <p>{timer.time}</p>
+      <button onClick={() => timer.onStart()}>start</button>
+      <button onClick={() => timer.onStop()}>stop</button>
     </>
   )
 }
