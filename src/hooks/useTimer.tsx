@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, ChangeEvent } from 'react'
 
-const useTimer = () => {
-  const [time, setTime] = useState<number>(10)
+const useTimer = (initTime: number) => {
+  const [time, setTime] = useState<number>(initTime)
   const refTimer = useRef(time)
 
   useEffect(() => {
@@ -22,8 +22,22 @@ const useTimer = () => {
     clearInterval(timerId as number)
   }
 
+  const onReset = () => {
+    setTime(initTime)
+  }
+
+  const [newTime, setNewTime] = useState<number>(0)
+
+  const onNewTime = (newTime: ChangeEvent<HTMLInputElement>) => {
+    setNewTime(Number(newTime.target.value))
+  }
+
+  const changeNewTime = () => {
+    setTime(newTime)
+  }
+
   return {
-    time, onStart, onStop
+    time, onStart, onStop, onReset, onNewTime, changeNewTime
   }
 }
 
