@@ -6,7 +6,10 @@ const Index: FC = () => {
   return (
     <div>
       <p>トップページ</p>
-      <Link href="/about">about</Link>
+      <ul>
+        <li><Link href="/about">about</Link></li>
+        <li><Link href="/timer">タイマー</Link></li>
+      </ul>
     </div>
   )
 }
