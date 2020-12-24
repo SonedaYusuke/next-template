@@ -5,5 +5,5 @@ export const CardBase = styled.div`
   border-radius: 20px;
   width: 400px;
   height: 300px;
-  padding: 10px
+  padding: 10px;
 `
