@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, ChangeEvent } from 'react'
+import React, { useState, useRef, useEffect, ChangeEvent } from "react"
 
 const useTimer = (initTime: number) => {
   const [time, setTime] = useState<number>(initTime)
@@ -37,10 +37,13 @@ const useTimer = (initTime: number) => {
   }
 
   return {
-    time, onStart, onStop, onReset, onNewTime, changeNewTime
+    time,
+    onStart,
+    onStop,
+    onReset,
+    onNewTime,
+    changeNewTime,
   }
 }
 
-export {
-  useTimer
-}
+export { useTimer }

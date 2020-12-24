@@ -5,7 +5,7 @@ import { CardBase } from "~/styles/card"
 const Card: FC = () => {
   return (
     <CardBase className="card">
-        <p>これはカードだぞ</p>
+      <p>これはカードだぞ</p>
     </CardBase>
   )
 }
