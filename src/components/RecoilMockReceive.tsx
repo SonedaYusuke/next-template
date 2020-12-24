@@ -10,15 +10,10 @@ const userState = atom<number>({
 const RecoilMock: FC = () => {
   const [user, setUser] = useRecoilState<number>(userState)
 
-  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setUser(Number(event.target.value))
-  }
-
   return (
     <div>
-      <p>こいつは送信側</p>
+      <p>こいつは受け取ってくれる側</p>
       <p>{user}</p>
-      <input type="number" onChange={(event) => onChange(event)}/>
     </div>
   )
 }
