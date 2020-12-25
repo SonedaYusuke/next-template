@@ -16,6 +16,9 @@ const Index: FC = () => {
         <li>
           <Link href="/recoil">recoil</Link>
         </li>
+        <li>
+          <Link href="/recoilTodo">todo</Link>
+        </li>
       </ul>
     </div>
   )
