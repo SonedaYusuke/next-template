@@ -1,7 +1,7 @@
-import React, { FC } from "react"
+import React, { VFC } from "react"
 import { useTimer } from "~/hooks/useTimer"
 
-const Timer: FC = () => {
+const Timer: VFC = () => {
   const timer = useTimer(100)
 
   return (

@@ -1,6 +1,6 @@
-import React, { FC, useState } from "react"
+import { VFC, useState } from "react"
 
-const Card: FC = () => {
+const Card: VFC = () => {
   const initVal = 0
   const [count, setCount] = useState(initVal)
   return (

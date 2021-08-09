@@ -1,8 +1,8 @@
-import React, { FC } from "react"
+import React, { VFC } from "react"
 
 import Todo from "~/components/Todo"
 
-const Recoil: FC = () => {
+const Recoil: VFC = () => {
   return (
     <div>
       <h1>recoilによるTODOリスト</h1>

@@ -1,12 +1,11 @@
 import { VFC } from "react"
-
 import { CardBase } from "~/styles/card"
 
 const Card: VFC = () => {
   return (
-    <CardBase className="card">
+    <div css={CardBase} className="card">
       <p>これはカードだぞ</p>
-    </CardBase>
+    </div>
   )
 }
 

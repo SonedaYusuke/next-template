@@ -1,10 +1,10 @@
-import React, { FC, useState, ChangeEvent } from "react"
+import React, { VFC, useState, ChangeEvent } from "react"
 
 import { atom, selector, useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
 
 type Item = {
-  id: number,
-  text: string,
+  id: number
+  text: string
   isComplete: boolean
 }
 
@@ -23,12 +23,12 @@ const removeItemAtIndex = (arr: Item[], index: number) => {
 
 const todoListState = atom<Item[]>({
   key: "todoListState",
-  default: []
+  default: [],
 })
 
 const todoListFilterState = atom({
   key: "todoListFilterState",
-  default: "show all"
+  default: "show all",
 })
 
 const filteredTodoListState = selector({
@@ -38,17 +38,17 @@ const filteredTodoListState = selector({
     const list = get(todoListState)
 
     switch (filter) {
-      case "Show Completed": 
+      case "Show Completed":
         return list.filter((item) => item.isComplete)
       case "Show Uncompleted":
         return list.filter((item) => !item.isComplete)
-      default: 
+      default:
         return list
     }
-  }
+  },
 })
 
-const TodoListFilters: FC = () => {
+const TodoListFilters: VFC = () => {
   const [filter, setFilter] = useRecoilState(todoListFilterState)
 
   const updateFilter = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -63,12 +63,12 @@ const TodoListFilters: FC = () => {
         <option value="Show All">All</option>
         <option value="Show Completed">Completed</option>
         <option value="Show Uncompleted">Uncompleted</option>
-       </select>
+      </select>
     </>
   )
 }
 
-const TodoItemCreator: FC = () => {
+const TodoItemCreator: VFC = () => {
   const [inputValue, setInputValue] = useState<string>("")
   const setTodoList = useSetRecoilState(todoListState)
 
@@ -79,7 +79,7 @@ const TodoItemCreator: FC = () => {
         id: getId(),
         text: inputValue,
         isComplete: false,
-      }
+      },
     ])
     setInputValue("")
   }
@@ -103,17 +103,20 @@ const todoListStatsState = selector({
     const totalNum = todoList.length
     const totalCompletedNum = todoList.filter((item) => item.isComplete).length
     const totalUncompletedNum = totalNum - totalCompletedNum
-    const percentCompleted = totalNum === 0 ? 0 : totalCompletedNum / totalNum * 100
+    const percentCompleted = totalNum === 0 ? 0 : (totalCompletedNum / totalNum) * 100
 
     return {
-      totalNum, totalCompletedNum, totalUncompletedNum, percentCompleted
+      totalNum,
+      totalCompletedNum,
+      totalUncompletedNum,
+      percentCompleted,
     }
-  }
+  },
 })
 
 const TodoListStats = () => {
   const { totalNum, totalCompletedNum, totalUncompletedNum, percentCompleted } = useRecoilValue(todoListStatsState)
-  
+
   const formattedPercentCompleted = Math.round(percentCompleted)
 
   return (
@@ -126,7 +129,7 @@ const TodoListStats = () => {
   )
 }
 
-const TodoItem = ({item}: any) => {
+const TodoItem = ({ item }: any) => {
   const [todoList, setTodoList] = useRecoilState(todoListState)
   const index = todoList.findIndex((listItem) => listItem === item)
 
@@ -142,7 +145,7 @@ const TodoItem = ({item}: any) => {
   const toggleItemCompletion = () => {
     const newList = replaceItemAtIndex(todoList, index, {
       ...item,
-      isComplete: !item.isComplete
+      isComplete: !item.isComplete,
     })
     setTodoList(newList)
   }
@@ -162,7 +165,7 @@ const TodoItem = ({item}: any) => {
   )
 }
 
-const Todo: FC = () => {
+const Todo: VFC = () => {
   const todoList = useRecoilValue(todoListState)
 
   return (

@@ -1,13 +1,13 @@
-import React, { FC, ChangeEvent } from "react"
+import React, { VFC, ChangeEvent } from "react"
 
 import { atom, useRecoilState } from "recoil"
 
 const userState = atom<number>({
   key: "userState",
-  default: 0
+  default: 0,
 })
 
-const RecoilMock: FC = () => {
+const RecoilMock: VFC = () => {
   const [user, setUser] = useRecoilState<number>(userState)
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +18,7 @@ const RecoilMock: FC = () => {
     <div>
       <p>こいつは送信側</p>
       <p>{user}</p>
-      <input type="number" onChange={(event) => onChange(event)}/>
+      <input type="number" onChange={(event) => onChange(event)} />
     </div>
   )
 }

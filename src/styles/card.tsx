@@ -1,6 +1,6 @@
-import styled from "@emotion/styled"
+import { css } from "@emotion/react"
 
-export const CardBase = styled.div`
+export const CardBase = css`
   background-color: #ddd;
   border-radius: 20px;
   width: 400px;

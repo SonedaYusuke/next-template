@@ -1,8 +1,8 @@
-import React, { FC } from "react"
+import React, { VFC } from "react"
 
 import Timer from "~/components/Timer"
 
-const About: FC = () => {
+const About: VFC = () => {
   return (
     <div>
       <Timer></Timer>

@@ -1,8 +1,8 @@
-import React, { FC } from "react"
+import React, { VFC } from "react"
 
 import Link from "next/link"
 
-const Index: FC = () => {
+const Index: VFC = () => {
   return (
     <div>
       <p>トップページ</p>

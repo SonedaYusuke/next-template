@@ -1,11 +1,11 @@
-import React, { FC } from "react"
+import React, { VFC } from "react"
 
 import Card from "~/components/Card"
 import Counter from "~/components/Counter"
 
 import { PinkText } from "~/styles/button"
 
-const About: FC = () => {
+const About: VFC = () => {
   return (
     <div>
       <PinkText>about</PinkText>
