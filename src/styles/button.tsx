@@ -1,6 +1,6 @@
-import styled from "@emotion/styled"
+import { css } from "@emotion/react"
 
-export const PinkText = styled.div`
+export const PinkText = css`
   color: hotpink;
   font-size: 32px;
 `

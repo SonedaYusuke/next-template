@@ -1,5 +1,4 @@
-import React, { VFC } from "react"
-
+import { VFC } from "react"
 import Link from "next/link"
 
 const Index: VFC = () => {
