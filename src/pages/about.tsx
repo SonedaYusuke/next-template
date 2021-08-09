@@ -3,7 +3,7 @@ import React, { FC } from "react"
 import Card from "~/components/Card"
 import Counter from "~/components/Counter"
 
-import { PinkText } from "~/styles/button.tsx"
+import { PinkText } from "~/styles/button"
 
 const About: FC = () => {
   return (

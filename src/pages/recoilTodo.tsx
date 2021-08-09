@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 
-import Todo from "~/components/Todo.tsx"
+import Todo from "~/components/Todo"
 
 const Recoil: FC = () => {
   return (

@@ -1,8 +1,8 @@
-import React, { FC } from "react"
+import { VFC } from "react"
 
 import { CardBase } from "~/styles/card"
 
-const Card: FC = () => {
+const Card: VFC = () => {
   return (
     <CardBase className="card">
       <p>これはカードだぞ</p>
