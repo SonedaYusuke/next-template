@@ -1,5 +1,4 @@
-import React, { VFC, useState, ChangeEvent } from "react"
-
+import { VFC, useState, ChangeEvent } from "react"
 import { atom, selector, useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
 
 type Item = {
